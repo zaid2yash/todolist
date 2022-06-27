@@ -1,0 +1,60 @@
+<%include partials/header%>
+<style type="text/css">
+	h1{
+		font-size: 50px;
+		line-height: 40px;
+		margin: 1em 0 0.5em 0;
+		color: #343434;
+		font-weight: bold;
+		font-family: 'Ultra', monospace;   
+		font-size: 36px;
+		line-height: 42px;
+		text-transform: uppercase;
+		text-shadow: 0 2px white, 0 3px #777;
+	}
+	body img{
+		background-repeat: no-repeat;
+		position: fixed;
+		top: 0;
+		min-width: 100%;
+		min-height: 1024px;
+		opacity: 0.9;
+	}
+	div p{
+		opacity: 0;
+		font-size: 30px;
+	}
+	.fadeIn{
+		transition: ease-out 2s;
+		opacity: 1;
+	}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var p=document.querySelector("p");
+			p.classList.add("fadeIn")
+		}
+	</script>
+<img src="wallpaper.jpg">
+<div class="container">
+	<div class="jumbotron" style="background-color: transparent; z-index: 1; position: relative;">
+			<h1><i>To Do Web App</i></h1>
+			<hr style="width: 60%; margin:auto;">
+			<p>Well Mr. Surfer, what century is it?? Yeah, you got it right. It is the 21st century. Wait a minute, are you still using a pen and paper to fill up your todos?? Well, this app might just be everything you need.
+				<br>
+			Log In or Sign up and keep all your todos just on your fingertips 24x7. 
+			</p>
+
+	</div>
+</div>
+<div class="container">
+	<div class="wrapper">
+		<%if(!currentUser){%>
+			<a href="/login" class="btn btn-lg btn-outline-primary home-button"> <i class="fas fa-user-check"></i> Log In</a>
+			<a href="/register" class="btn btn-lg btn-outline-primary home-button"> <i class="fas fa-user-plus"></i> Sign Up</a>
+		<% }else{%>
+			<a href="/dashboard" class="btn btn-lg btn-outline-primary home-button"> <i class="fas fa-user"></i> DashBoard</a>
+		<%}%>
+	</div>
+</div>
+<%include partials/footer%>
